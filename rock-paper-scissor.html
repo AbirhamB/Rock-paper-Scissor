@@ -16,14 +16,8 @@
 <body>
     <h2>Rock Paper Scissors</h2>
     <button onClick="
-     if(randomNumber >0 && randomNumber <1/3){
-        computerMove='Rock';
-     }else if(randomNumber>1/3 && randomNumber<2/3){
-        computerMove='Paper';
-     }else{
-        computerMove='Scissor'
-     }
-
+     pickComputerMove();
+    
      if(computerMove==='Rock'){
         result=`You picked Rock and the computer picked ${computerMove}. Tie!`
      }else if(computerMove==='Paper'){
@@ -37,13 +31,7 @@
 
     <button onClick="
     
-    if(randomNumber >0 && randomNumber <1/3){
-       computerMove='Rock';
-    }else if(randomNumber>1/3 && randomNumber<2/3){
-       computerMove='Paper';
-    }else{
-       computerMove='Scissor'
-    }
+    pickComputerMove();
 
     if(computerMove==='Paper'){
        result=`You picked Paper and the computer picked ${computerMove}. Tie!`
@@ -58,13 +46,7 @@
 
 
     <button onClick="
-    if(randomNumber >0 && randomNumber <1/3){
-        computerMove='Rock';
-     }else if(randomNumber>1/3 && randomNumber<2/3){
-        computerMove='Paper';
-     }else{
-        computerMove='Scissor'
-     }
+     pickComputerMove();
  
      if(computerMove==='Scissor'){
         result=`You picked Scissor and the computer picked ${computerMove}. Tie!`
@@ -78,8 +60,19 @@
 
     <script>
       let computerMove;
-      let result; 
-      let randomNumber= Math.random(); 
+      let result;
+    
+    function pickComputerMove() {
+    let randomNumber = Math.random();
+
+    if (randomNumber >= 0 && randomNumber < 1/3) {
+        computerMove = 'Rock';
+  } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
+    computerMove = 'Paper';
+  } else {
+    computerMove = 'Scissor';
+  }
+}
     </script>
 </body>
 </html>
