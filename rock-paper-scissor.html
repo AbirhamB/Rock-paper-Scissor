@@ -25,7 +25,19 @@
      }else{
         result=`You picked Rock and the computer picked ${computerMove}. You won!`
      }
-     alert(result)
+
+     if(result===`You picked Rock and the computer picked ${computerMove}. Tie!`){
+      score.ties+=1;
+     }else if(result===`You picked Rock and the computer picked ${computerMove}. You lost!`
+     ){
+         score.losses+=1
+     }
+     else if(result===`You picked Rock and the computer picked ${computerMove}. You won!`
+     ){
+         score.wins+=1
+     }
+     alert(`${result}
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
     
     ">Rock</button>
 
@@ -40,7 +52,19 @@
     }else{
        result=`You picked paper and the computer picked ${computerMove}. You lost!`
     }
-    alert(result)
+
+    if(result===`You picked Paper and the computer picked ${computerMove}. Tie!`){
+      score.ties+=1;
+     }else if(result===`You picked Paper and the computer picked ${computerMove}. You lost!`
+     ){
+         score.losses+=1
+     }
+     else if(result===`You picked Paper and the computer picked ${computerMove}. You won!`
+     ){
+         score.wins+=1
+     }
+     alert(`${result}
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
    
     ">Paper</button>
 
@@ -53,12 +77,36 @@
      }else if(computerMove==='Paper'){
         result=`You picked Scissor and the computer picked ${computerMove}. You lost!`
      }else{
-        result=`You picked Scissor and the computer picked ${computerMove}. Tie!`
+        result=`You picked Scissor and the computer picked ${computerMove}. You won!`
      }
-     alert(result)
+
+
+     if(result===`You picked Scissor and the computer picked ${computerMove}. Tie!`){
+      score.ties+=1;
+     }else if(result===`You picked Scissor and the computer picked ${computerMove}. You lost!`
+     ){
+         score.losses+=1
+     }
+     else if(result===`You picked Scissor and the computer picked ${computerMove}. You won!`
+     ){
+         score.wins+=1
+     }
+     alert(`${result}
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
     ">Scissors</button>
+    <button onClick="
+    score.wins=0;
+    score.losses=0;
+    score.ties=0;
+
+    ">Reset The Game!</button>
 
     <script>
+      const score={
+         wins:0,
+         losses:0,
+         ties:0
+      }
       let computerMove;
       let result;
     
